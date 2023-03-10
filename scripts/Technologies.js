@@ -11,7 +11,6 @@ document.addEventListener(
     }
 )
 
-
 export const Technologies = () => {
     let html = '<h2>Technologies</h2>';
 

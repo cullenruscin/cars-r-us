@@ -11,7 +11,6 @@ document.addEventListener(
     }
 )
 
-
 export const Wheels = () => {
     let html = '<h2>Wheels</h2>';
 

@@ -11,7 +11,6 @@ document.addEventListener(
     }
 )
 
-
 export const Interiors = () => {
     let html = '<h2>Interiors</h2>';
 
