@@ -31,17 +31,17 @@ const database = {
 }
 
 export const getPaints = () => {
-    return database.paints.map(paint => ({...paint}))
+    return database.paints.map(paint => ({...paint}));
 }
 
 export const getInteriors = () => {
-    return database.interiors.map(interior => ({...interior}))
+    return database.interiors.map(interior => ({...interior}));
 }
 
 export const getWheels = () => {
-    return database.wheels.map(wheels => ({...wheels}))
+    return database.wheels.map(wheels => ({...wheels}));
 }
 
 export const getTechnologies = () => {
-    return database.technologies.map(technology => ({...technology}))
+    return database.technologies.map(technology => ({...technology}));
 }
