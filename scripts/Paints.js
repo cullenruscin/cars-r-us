@@ -1,6 +1,15 @@
-import { getPaints } from "./database.js";
+import { getPaints, setPaint } from "./database.js";
 
 const paints = getPaints();
+
+document.addEventListener(
+    "change",
+    (e) => {
+        if (e.target.id === "paints") {
+            setPaint(parseInt(e.target.value));
+        }
+    }
+)
 
 export const Paints = () => {
     let html = '<h2>Paints</h2>';

@@ -27,7 +27,8 @@ const database = {
     orders: [
         // id, paintId, interiorId, wheelId, technologyId
         {}
-    ]
+    ],
+    builder: {}
 }
 
 export const getPaints = () => {
@@ -44,4 +45,20 @@ export const getWheels = () => {
 
 export const getTechnologies = () => {
     return database.technologies.map(technology => ({...technology}));
+}
+
+export const setPaint = (id) => {
+    database.builder.paintId = id;
+}
+
+export const setInterior = (id) => {
+    database.builder.interiorId = id;
+}
+
+export const setWheels = (id) => {
+    database.builder.wheelId = id;
+}
+
+export const setTechnology = (id) => {
+    database.builder.technologyId = id;
 }
