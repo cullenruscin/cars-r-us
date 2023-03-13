@@ -25,8 +25,14 @@ const database = {
         { id: 4, package: "Ultra Package", price: 649.99 }
     ],
     orders: [
-        // id, paintId, interiorId, wheelId, technologyId
-        {}
+        {
+            id: 1,
+            paintId: 1,
+            interiorId: 1,
+            wheelId: 1,
+            technologyId: 1,
+            timestamp: 1
+        }
     ],
     builder: {}
 }
@@ -47,6 +53,10 @@ export const getTechnologies = () => {
     return database.technologies.map(technology => ({...technology}));
 }
 
+export const getOrders = () => {
+    return database.orders.map(order => ({...order}));
+}
+
 export const setPaint = (id) => {
     database.builder.paintId = id;
 }
@@ -61,4 +71,14 @@ export const setWheels = (id) => {
 
 export const setTechnology = (id) => {
     database.builder.technologyId = id;
+}
+
+export const createOrder = () => {
+    const order = {...database.builder};
+    const lastIndex = database.orders.length - 1;
+    order.id = database.orders[lastIndex].id + 1;
+    order.timestamp = Date.now();
+    database.orders.push(order);
+    database.builder = {}
+    document.dispatchEvent(new CustomEvent("order"))
 }

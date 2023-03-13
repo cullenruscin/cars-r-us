@@ -2,6 +2,16 @@ import { Paints } from "./Paints.js";
 import { Interiors } from "./Interiors.js";
 import { Wheels } from "./Wheels.js";
 import { Technologies } from "./Technologies.js";
+import { Orders } from "./Orders.js";
+import { createOrder } from "./database.js";
+
+
+document.addEventListener("click", e => {
+    const itemClicked = e.target;
+    if (itemClicked.id.startsWith("orderButton")) {
+        createOrder();
+    }
+})
 
 export const Generate = () => {
     return `
@@ -24,6 +34,11 @@ export const Generate = () => {
 
         <article>
             <button id="orderButton">Order</button>
+        </article>
+
+        <article>
+            <h2>Orders</h2>
+            ${Orders()}
         </article>
     `;
 }

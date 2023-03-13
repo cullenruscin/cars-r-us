@@ -7,3 +7,7 @@ const renderHTML = () => {
 }
 
 renderHTML();
+
+document.addEventListener("order", event => {
+    renderHTML();
+})
